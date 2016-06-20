@@ -1,0 +1,1888 @@
+
+
+*****************************************************************************
+*************************
+  ####      #     ####       DEVICE PREP INITIATED BY DAS ISATSIMULATOR 
+(8675309) ON PID [1213]                     
+  #   #    # #   #    #                                                                              
+  #    #  #   #  #	     STARTING TIME IS Wed Jun  8 09:46:38 2016                                               
+  #    #  #####   ####       LOG DIRECTORY IS /usr/local/das/logs                                               
+  #    #  #   #       #	                                                                       
+  #   #   #   #  #    #      DEBUG LOG: deviceprep-DEBUG-101-GE1-MPLSMN1370W-
+MPLSMN1393W.log                                               
+  ####    #   #   ####       LOCAL LOG: deviceprep-101-GE1-MPLSMN1370W-
+MPLSMN1393W.log                                               
+*****************************************************************************
+*************************
+
+CHECKING ISAT WORKFLOW -----> [ISAT WORKFLOW RECIEVED IN JSON FORMAT]
+
+[DAS OBJECT CONTENTS (ALPHABETIC) START]--->
+
+AFFILIATE                      ----->      QC         
+AGG_INTERFACE                  ----->                 
+AGG_IP_ADDRESS                 ----->                 
+CIRCUIT_NAME                   ----->      101/GE1/MPLSMN1370W/MPLSMN1393W
+CORRELATIONID                  ----->      8675309    
+DBLOCK                         ----->      ON         
+DEBUG_LOG                      ----->      /usr/local/das/logs/deviceprep-
+DEBUG-101-GE1-MPLSMN1370W-MPLSMN1393W.log
+ENVIRONMENT                    ----->      application/json
+[ERRORCODES]                                          
+           DATABASE_CONNECTION_ERROR       -----> 3102
+           DATABASE_TRANSACTION_ERROR      -----> 3118
+FORCE_OVERRIDE                 ----->      TRUE       
+LOCAL_LOG                      ----->      /usr/local/das/logs/deviceprep-
+101-GE1-MPLSMN1370W-MPLSMN1393W.log
+MENID                          ----->      628        
+MODULE_VERSION                 ----->      0.19       
+MSGSRCSYSTEM                   ----->      DASSIM     
+NPE_GROUPNUMBER                ----->                 
+NPE_INTERFACE                  ----->      1/1/6      
+NPE_IP_ADDRESS                 ----->      137.107.218.63
+NPE_NODE                       ----->      MPLSMN1370W-CORE-MOE
+NPE_PORT_TRAN_RATE             ----->      1000BASELX 
+NPE_TYPE                       ----->      ALU7210    
+PRODUCT                        ----->      CGE        
+SCHEMAVERSION                  ----->      1.0.0.1    
+SPLUNK_IDENT                   ----->      DAS-PREPARATION
+UPE_GROUPNUMBER                ----->                 
+UPE_INTERFACE                  ----->      6          
+UPE_LOCATION                   ----->      CenturyLink
+500 S. New York Avenue
+Winter Park, FL
+32789
+UPE_NODE                       ----->      MPLSMN1393W-EDGE-CN1
+UPE_PORT_TRAN_RATE             ----->      1000BASELX 
+UPE_TYPE                       ----->      CIENA3916  
+USE_AGG                        ----->      FALSE      
+USE_SPLUNK                     ----->      TRUE       
+VERSION                        ----->      0.03       
+return_content                 ----->      development
+showUCFcomments                ----->      TRUE       
+
+<---[DAS OBJECT CONTENTS (ALPHABETIC) END]
+
+[2016/06/08 09:46:38.992][main::deviceprep][new][_init]                               
+- USING -----> DEVICEPREP Version (0.03) / MODULE Version (0.19)
+[2016/06/08 09:46:38.993][main::deviceprep][new][_init]                               
+- Creation of new Deviceprep Object completed...
+[2016/06/08 09:46:38.993][DAS::Prep::new][_init][connectDB]                           
+- Opening a connection to the [das] Database.....
+[2016/06/08 09:46:39.007][DAS::Prep::new][_init][connectDB]                           
+- Connection to the [das] Database successful.
+[2016/06/08 09:46:39.007][DAS::Prep::new][_init][connectDB]                           
+- Opening a connection to the [ltacc] Database.....
+[2016/06/08 09:46:39.212][DAS::Prep::new][_init][connectDB]                           
+- Connection to the [ltacc] Database successful.
+[2016/06/08 09:46:39.212][DAS::Prep::_init][getCodesAndConstants][DBpush]             
+- Sending query to [das]
+
+SQL [--->
+	SELECT * from prep_errorcodes
+SQL <---]
+
+[2016/06/08 09:46:39.212][DAS::Prep::_init][getCodesAndConstants][DBpush]             
+- Rows Returned from query as HASHREF, indexed by [code] ---> [47]
+[2016/06/08 09:46:39.213][DAS::Prep::new][_init][getCodesAndConstants]                
+- Pushing error codes from DAS DB into ERRORCODES ATTRIBUTE
+
+0                              --->        PORT_READY 
+3100                           --->        ADATPREP_VLAN
+3101                           --->        ISAT_DATA_VALIDATION_ERROR
+3102                           --->        DATABASE_CONNECTION_ERROR
+3103                           --->        DEFAULT_PORT
+3104                           --->        DELETION_FAILED
+3105                           --->        EXISTING_SAP
+3106                           --->        FAILED_PORT_PREP
+3107                           --->        INTERFACE_CHECK
+3108                           --->        INVALID_EDGE_UPLINK
+3109                           --->        L2VFI_ADAT_SUBNET
+3110                           --->        MISSING_CORE_PORT
+3111                           --->        PORT_IN_USE
+3113                           --->        UNINITIALIZED
+3114                           --->        UPLINK_UNSUPPORTED
+3115                           --->        INVALID_NPE_NODENAME
+3116                           --->        VPLS_DHCPRELAY_SERVICE
+3117                           --->        UCF_CONNECTION_ERROR
+3118                           --->        DATABASE_TRANSACTION_ERROR
+3119                           --->        UCF_INTERACTION_ERROR
+3120                           --->        EXISTING_CIRCUIT_ERROR
+3121                           --->        NPE_INTERFACE_FORMAT_ERROR
+3122                           --->        UPE_INTERFACE_FORMAT_ERROR
+3123                           --->        MODULE_NOT_SUPPORTED
+3124                           --->        DAS_SYNTAX_ERROR
+3125                           --->        INVALID_CIRCUIT_ID
+3126                           --->        INVALID_NPE_TRANSMISSION_RATE
+3127                           --->        INVALID_UPE_TRANSMISSION_RATE
+3128                           --->        UNSUPPORTED_MENID
+3129                           --->        REQUIRED_FIELDS_MISSING
+3130                           --->        INVALID_NPE_DEVICE
+3131                           --->        INVALID_UPE_DEVICE
+3132                           --->        MISMATCHED_NPE_PREFIX_TO_RATE
+3133                           --->        MISMATCHED_UPE_PREFIX_TO_RATE
+3134                           --->        MISSING_NPE_RATE
+3135                           --->        MISSING_UPE_RATE
+3136                           --->        PORT_ALREADY_PREPPED
+3137                           --->        SAP_DELETION_FAILURE
+3138                           --->        FRAMING_SET_ERROR
+3139                           --->        EMS_LOOPBACKIP_FAILURE
+3140                           --->        EMS_EXCEPTION_ERROR
+3141                           --->        CONFIGURATION_ERROR
+3142                           --->        INVALID_MODULE
+3143                           --->        SVC_MGR_ID_FAILURE
+3144                           --->        INVALID_UPE_NODENAME
+3145                           --->        SAP_VPLS_CREATION_FAILURE
+3199                           --->        UNCLASSIFIED_EXCEPTION
+
+[2016/06/08 09:46:39.214][DAS::Prep::_init][getCodesAndConstants][DBpush]             
+- Sending query to [das]
+
+SQL [--->
+	SELECT name, value from constants WHERE (PRODUCT = 'CGE' AND AFFILIATE 
+= 'QC')
+SQL <---]
+
+[2016/06/08 09:46:39.214][DAS::Prep::_init][getCodesAndConstants][DBpush]             
+- Rows Returned from query as HASHREF, indexed by [name] ---> [0]
+[2016/06/08 09:46:39.214][DAS::Prep::new][_init][getCodesAndConstants]                
+- Pushing constants from DAS DB into DAS_CONSTANTS ATTRIBUTE
+
+
+[2016/06/08 09:46:39.214][DAS::Prep::new][_init][createOrderNumber]                   
+- Creating an order number for this prep action
+[2016/06/08 09:46:39.214][DAS::Prep::_init][createOrderNumber][DBpush]                
+- Sending query to [das]
+
+SQL [--->
+	SELECT MAX(ORDER_NUMBER) from UCF_TRACKER
+SQL <---]
+
+[2016/06/08 09:46:39.215][DAS::Prep::_init][createOrderNumber][DBpush]                
+- Rows Returned from query as ARRAYREF ---> [1]
+[2016/06/08 
+09:46:39.215][DAS::Prep::_init][createOrderNumber][setObjectValue]        - 
+UCF_ORDERNUMBER now equals ---> [1272]
+[2016/06/08 09:46:39.215][DAS::Prep::_init][createOrderNumber][DBpush]                
+- Sending query to [das]
+
+SQL [--->
+	     INSERT INTO UCF_TRACKER (ORDER_NUMBER, ACTION, CIRCUITID, 
+UPE_MACADDRESS, TIMESTAMP)
+                VALUES   ("1272", "prep", "101/GE1/MPLSMN1370W/MPLSMN1393W", 
+"", "2016/06/08 09:46:39.215")
+SQL <---]
+
+[2016/06/08 09:46:39.224][DAS::Prep::_init][createOrderNumber][DBpush]                
+- Rows Returned from query as ARRAYREF ---> [1]
+[2016/06/08 09:46:39.225][DAS::Prep::new][_init][createOrderNumber]                   
+- Order number [1272] created for UCF transactions pertaining to this prep 
+action.
+[2016/06/08 09:46:39.225][DAS::Prep::_init][checkRequiredFields][DBpush]              
+- Sending query to [das]
+
+SQL [--->
+		SELECT FIELD from required_fields where (PRODUCT LIKE "%CGE%" AND 
+AFFILIATE LIKE "%QC%") or
+		(PRODUCT = 'ALL' AND AFFILIATE='ALL')
+SQL <---]
+
+[2016/06/08 09:46:39.225][DAS::Prep::_init][checkRequiredFields][DBpush]              
+- Rows Returned from query as ARRAYREF ---> [13]
+[2016/06/08 09:46:39.225][DAS::Prep::new][_init][checkRequiredFields]                 
+- Pushing Required Fields for [QC/CGE] from activation DB into 
+@requiredFieldsFromIsat ARRAY
+
+CIRCUIT_NAME
+NPE_INTERFACE
+NPE_IP_ADDRESS
+MENID
+NPE_NODE
+NPE_PORT_TRAN_RATE
+UPE_INTERFACE
+UPE_NODE
+UPE_PORT_TRAN_RATE
+PRODUCT
+AFFILIATE
+UPE_TYPE
+NPE_TYPE
+
+[2016/06/08 09:46:39.226][DAS::Prep::new][_init][checkRequiredFields]                 
+- All required fields for [QC/CGE] have been populated from ISAT.
+[2016/06/08 
+09:46:39.226][DAS::Prep::_init][checkRequiredFields][reformatObject]      - 
+Reformatting object
+[2016/06/08 09:46:39.226][DAS::Prep::_init][checkValidCircuitId][DBpush]              
+- Sending query to [das]
+
+SQL [--->
+	SELECT * from circuitId where (PRODUCT LIKE "%CGE%" AND AFFILIATE LIKE 
+"%QC%")
+SQL <---]
+
+[2016/06/08 09:46:39.226][DAS::Prep::_init][checkValidCircuitId][DBpush]              
+- Rows Returned from query as HASHREF, indexed by [index] ---> [1]
+[2016/06/08 09:46:39.227][DAS::Prep::new][_init][checkValidCircuitId]                 
+- Received Circuit ID REGEX info from DA Database
+
+Uplink REGEX ARM               ----->      ^[0-
+2]{3}/GE[1|10]/.........../...........$
+
+[2016/06/08 
+09:46:39.227][DAS::Prep::_init][checkValidCircuitId][setObjectValue]      - 
+INVENTORY_SOURCE now equals ---> [ARM]
+
+[2016/06/08 09:46:39.227][DAS::Prep::new][_init][checkValidCircuitId]                 
+- Circuit ID [101/GE1/MPLSMN1370W/MPLSMN1393W] is a valid Circuit ID on 
+[CGE/QC] for ARM inventory.
+[2016/06/08 09:46:39.227][DAS::Prep::new][_init][checkExistingCircuitId]              
+- Checking for the existence of 101/GE1/MPLSMN1370W/MPLSMN1393W in the DA 
+Database
+[2016/06/08 09:46:39.227][DAS::Prep::_init][checkExistingCircuitId][DBpush]           
+- Sending query to [das]
+
+SQL [--->
+	SELECT CIRCUIT_ID from device_activation WHERE CIRCUIT_ID = 
+"101/GE1/MPLSMN1370W/MPLSMN1393W"
+SQL <---]
+
+[2016/06/08 09:46:39.228][DAS::Prep::_init][checkExistingCircuitId][DBpush]           
+- Rows Returned from query as ARRAYREF ---> [0]
+[2016/06/08 09:46:39.228][DAS::Prep::new][_init][checkExistingCircuitId]              
+- 101/GE1/MPLSMN1370W/MPLSMN1393W not found in the DA Database, we can safely 
+continue.
+[2016/06/08 
+09:46:39.228][DAS::Prep::_init][checkExistingCircuitId][setObjectValue]   - 
+DBLOCK now equals ---> [OFF]
+[2016/06/08 09:46:39.228][DAS::Prep::_init][getType][DBpush]                          
+- Sending query to [das]
+
+SQL [--->
+	SELECT vendor, model, type from supported_devices WHERE (type = 
+"ALU7210")
+SQL <---]
+
+[2016/06/08 09:46:39.228][DAS::Prep::_init][getType][DBpush]                          
+- Rows Returned from query as HASHREF, indexed by [type] ---> [3]
+[2016/06/08 09:46:39.229][DAS::Prep::new][_init][getType]                             
+- Assigning NPE VENDOR: ALU / MODEL: 7210 from [ALU7210]
+[2016/06/08 09:46:39.229][DAS::Prep::_init][getType][DBpush]                          
+- Sending query to [das]
+
+SQL [--->
+	SELECT vendor, model, type from supported_devices WHERE (type = 
+"CIENA3916")
+SQL <---]
+
+[2016/06/08 09:46:39.229][DAS::Prep::_init][getType][DBpush]                          
+- Rows Returned from query as HASHREF, indexed by [type] ---> [3]
+[2016/06/08 09:46:39.230][DAS::Prep::new][_init][getType]                             
+- Assigning UPE VENDOR: Ciena / MODEL: 3916 from [CIENA3916]
+[2016/06/08 09:46:39.230][DAS::Prep::new][_init][discoverDevice]                      
+- Pulling NPE Device SNMP R/O Community string.
+
+[2016/06/08 09:46:40.482][DAS::Prep::_init][discoverDevice][tellUCF]                  
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:40.482][DAS::Prep::_init][discoverDevice][tellUCF]                  
+- Payload is:
+
+JSON [--->
+	[{
+          "Service"     : "getCommunityString",
+          "Host"        : "137.107.218.63",
+	  "OrderNumber" : "1272"
+        }]
+JSON <---]
+
+[2016/06/08 09:46:40.482][DAS::Prep::_init][discoverDevice][tellUCF]                  
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:40.482][DAS::Prep::new][_init][discoverDevice]                      
+- Recieved good SNMP Community String for NPE device. --> [qM0eRo]
+
+[2016/06/08 09:46:41.029][DAS::Prep::_init][discoverDevice][tellUCF]                  
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:41.030][DAS::Prep::_init][discoverDevice][tellUCF]                  
+- Payload is:
+
+JSON [--->
+	[{
+	  "Service"     : "discoverDevice",
+          "Host"        : "137.107.218.63",
+          "Community"   : "qM0eRo",
+          "OrderNumber" : "1272"
+        }]
+JSON <---]
+
+[2016/06/08 09:46:41.030][DAS::Prep::_init][discoverDevice][tellUCF]                  
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:41.030][DAS::Prep::new][_init][discoverDevice]                      
+- NPE Device standards being loaded into object attributes.
+
+ConnectionMethod               ----->      5620SAM    
+EnterpriseOID                  ----->      .1.3.6.1.4.1.6527.6.2.1.2.2.2
+Hostname                       ----->      MPLSMN1370W-CORE-MOE
+MAX_PORT_MTU                   ----->      9212       
+Model                          ----->      7210       
+Timeout                        ----->      40         
+Vendor                         ----->      ALU        
+sysDescr                       ----->      TiMOS-B-6.0.R5 both/mpc ALCATEL 
+SAS-M 24F 2XFP 7210 Copyright (c) 2000-2014 Alcatel-Lucent.
+All rights reserved. All use subject to applicable license agreements.
+Built on Tue Feb 11 19:28:03 IST 2014 by builder in 
+/home/builder/6.0B1/R5/panos/main
+
+
+[2016/06/08 09:46:41.030][DAS::Prep::_init][getDeviceStandards][DBpush]               
+- Sending query to [das]
+
+SQL [--->
+	SELECT * from supported_devices WHERE (vendor = "ALU" AND model = 
+"7210" AND product = "CGE" AND affiliate = "QC")
+SQL <---]
+
+[2016/06/08 09:46:41.031][DAS::Prep::_init][getDeviceStandards][DBpush]               
+- Rows Returned from query as HASHREF, indexed by [model] ---> [1]
+[2016/06/08 09:46:41.031][DAS::Prep::new][_init][getDeviceStandards]                  
+- NPE Device standards being loaded into object attributes.
+
+DHCPVLAN                       ----->      127        
+IN_VPLS_VLAN                   ----->                 
+InterfaceRegex                 ----->      ^(\d+)\/(\d+)\/(\d+)?
+NPE_DEVNAME_REGEX              ----->      ^...........-....-MOE$
+OUT_VPLS_VLAN                  ----->                 
+UPE_DEVNAME_REGEX              ----->                 
+UplinkIntf                     ----->      ^(1/1/1$|1/1/25$$)
+ValidActivationNPE             ----->      True       
+ValidActivationUPE             ----->      False      
+type                           ----->      ALU7210    
+
+[2016/06/08 09:46:41.031][DAS::Prep::_init][getDeviceStandards][DBpush]               
+- Sending query to [das]
+
+SQL [--->
+	SELECT * from supported_devices WHERE (vendor = "Ciena" AND model = 
+"3916" AND product = "CGE" AND affiliate = "QC")
+SQL <---]
+
+[2016/06/08 09:46:41.032][DAS::Prep::_init][getDeviceStandards][DBpush]               
+- Rows Returned from query as HASHREF, indexed by [model] ---> [1]
+[2016/06/08 09:46:41.032][DAS::Prep::new][_init][getDeviceStandards]                  
+- UPE Device standards being loaded into object attributes.
+
+DHCPVLAN                       ----->      127        
+IN_VPLS_VLAN                   ----->      4095       
+InterfaceRegex                 ----->      ^(\d+)?    
+NPE_DEVNAME_REGEX              ----->                 
+OUT_VPLS_VLAN                  ----->      127        
+UPE_DEVNAME_REGEX              ----->      ^...........-EDGE-CN1$
+UplinkIntf                     ----->      6          
+ValidActivationNPE             ----->      False      
+ValidActivationUPE             ----->      True       
+type                           ----->      CIENA3916  
+
+[2016/06/08 09:46:41.032][DAS::Prep::_init][getValidServices][DBpush]                 
+- Sending query to [das]
+
+SQL [--->
+	SELECT * from device_services WHERE (vendor = "ALU" AND model = "7210" 
+AND prep = "1")
+SQL <---]
+
+[2016/06/08 09:46:41.032][DAS::Prep::_init][getValidServices][DBpush]                 
+- Rows Returned from query as HASHREF, indexed by [service] ---> [7]
+[2016/06/08 09:46:41.032][DAS::Prep::new][_init][getValidServices]                    
+- Pushing NPE services from DB into the NPE UCF_SERVICES ATTRIBUTE
+
+BUILD_PORT_VPLS_SERVICE
+GET_EMS_LOOPBACK_IP
+GET_INTERFACE_CONFIG
+GET_SAPS_FROM_INTERFACE
+SET_FRAMING_TO_DEFAULT
+VALIDATE_CONFIG_WITH_MTU
+
+[2016/06/08 09:46:41.033][DAS::Prep::new][_init][createPrepEntry]                     
+- Creating a new entry in the DA Database
+[2016/06/08 09:46:41.033][DAS::Prep::_init][createPrepEntry][DBpush]                  
+- Sending query to [das]
+
+SQL [--->
+		INSERT INTO device_activation (CIRCUIT_ID, PRODUCT, AFFILIATE, 
+MENID, NPE_NAME, NPE_TYPE, NPE_VENDOR, NPE_MODEL, NPE_IP, NPE_INTERFACE, 
+NPE_LAG, UPE_NAME, UPE_TYPE, UPE_VENDOR, UPE_MODEL, NPE_PORT_STATUS, 
+UPE_INTERFACE, UPE_LAG, UPE_LOCATION, ACTIVATION_STATUS, PREP_PID, INVENTORY, 
+UCF_ORDER_PREP, START_DATE, LAST_MODIFIED)  
+		VALUES   ("101/GE1/MPLSMN1370W/MPLSMN1393W", "CGE", "QC", "628", 
+			  "MPLSMN1370W-CORE-MOE", "ALU7210", "ALU", "7210", 
+"137.107.218.63", 
+			  "1/1/6", "" ,"MPLSMN1393W-EDGE-CN1", "CIENA3916", 
+"Ciena", 
+			  "3916", "STARTING PORTPREP", "6", "", "CenturyLink  500 
+S. New York Avenue  Winter Park, FL  32789", 
+			  "WAITING ON PORTPREP", "1213", "ARM", "1272", "2016/06/08 
+09:46:41.033", "2016/06/08 09:46:41.033")
+SQL <---]
+
+[2016/06/08 09:46:41.037][DAS::Prep::_init][createPrepEntry][DBpush]                  
+- Rows Returned from query as ARRAYREF ---> [1]
+[2016/06/08 09:46:41.037][DAS::Prep::_init][createPrepEntry][DBpush]                  
+- Sending query to [das]
+
+SQL [--->
+	SELECT ACTION_NUMBER from device_activation WHERE CIRCUIT_ID 
+="101/GE1/MPLSMN1370W/MPLSMN1393W"
+SQL <---]
+
+[2016/06/08 09:46:41.038][DAS::Prep::_init][createPrepEntry][DBpush]                  
+- Rows Returned from query as ARRAYREF ---> [1]
+[2016/06/08 09:46:41.038][DAS::Prep::_init][createPrepEntry][setObjectValue]          
+- ACTION_NUMBER now equals ---> [1952]
+[2016/06/08 09:46:41.038][DAS::Prep::new][_init][checkValidDevice]                    
+- Checking if [NPE] is a valid device
+[2016/06/08 09:46:41.038][DAS::Prep::new][_init][checkValidDevice]                    
+- NPE Device [ALU 7210] is a supported NPE device.
+[2016/06/08 09:46:41.038][DAS::Prep::new][_init][checkValidDevice]                    
+- Checking if NPE devicename MPLSMN1370W-CORE-MOE is correct for QC.
+[2016/06/08 09:46:41.039][DAS::Prep::new][_init][checkValidDevice]                    
+- MPLSMN1370W-CORE-MOE is a valid NPE device name.
+[2016/06/08 09:46:41.039][DAS::Prep::new][_init][checkValidDevice]                    
+- Checking if [UPE] is a valid device
+[2016/06/08 09:46:41.039][DAS::Prep::new][_init][checkValidDevice]                    
+- UPE Device [Ciena 3916] is a supported UPE device.
+[2016/06/08 09:46:41.039][DAS::Prep::new][_init][checkValidDevice]                    
+- Checking if UPE devicename MPLSMN1393W-EDGE-CN1 is correct for QC.
+[2016/06/08 09:46:41.040][DAS::Prep::new][_init][checkValidDevice]                    
+- MPLSMN1393W-EDGE-CN1 is a valid UPE device name.
+[2016/06/08 09:46:41.040][DAS::Prep::new][_init][checkValidTransRate]                 
+- Getting port prefix translation for 1000BASELX.
+[2016/06/08 09:46:41.287][DAS::Prep::_init][checkValidTransRate][tellUCF]             
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:41.288][DAS::Prep::_init][checkValidTransRate][tellUCF]             
+- Payload is:
+
+JSON [--->
+	[{
+                  "Service"     : "getConversionTableEntry",
+		  "OrderNumber" : "1272",
+                  "Table"       : "TransmissionRate",
+                  "Entry"       : "1000BASELX"
+        }]
+JSON <---]
+
+[2016/06/08 09:46:41.288][DAS::Prep::_init][checkValidTransRate][tellUCF]             
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:41.288][DAS::Prep::new][_init][checkValidTransRate]                 
+- Getting port prefix translation for 1000BASELX.
+[2016/06/08 09:46:41.536][DAS::Prep::_init][checkValidTransRate][tellUCF]             
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:41.536][DAS::Prep::_init][checkValidTransRate][tellUCF]             
+- Payload is:
+
+JSON [--->
+	[{
+                  "Service"     : "getConversionTableEntry",
+		  "OrderNumber" : "1272",
+                  "Table"       : "TransmissionRate",
+                  "Entry"       : "1000BASELX"
+        }]
+JSON <---]
+
+[2016/06/08 09:46:41.536][DAS::Prep::_init][checkValidTransRate][tellUCF]             
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:41.537][DAS::Prep::new][_init][getSlotPort]                         
+- Extracting INTERFACE/SHELF/SLOT/CARD/PORT from 1/1/6
+
+SLOT: 1
+CARD: 1
+PORT: 6
+
+[2016/06/08 09:46:41.537][DAS::Prep::new][_init][getSlotPort]                         
+- Extracting INTERFACE/SHELF/SLOT/CARD/PORT from 6
+
+PORT: 6
+
+[2016/06/08 09:46:41.538][DAS::Prep::new][_init][checkEdgeUplink]                     
+- Edge Uplink [6] is correct for Ciena 3916.
+
+
+******EXITING DEVICEPREP OBJECT CREATION ROUTINE.  OBJECT CREATED AND PASSED 
+ALL VALIDATIONS******
+
+[2016/06/08 09:46:41.538][main::deviceprep][validateMenid]                            
+- Validating MenID for [628]
+[2016/06/08 09:46:41.538][main::deviceprep][validateMenid]                            
+- Checking LTACC ada.mgmtsubnets for [628]
+[2016/06/08 09:46:41.538][main::deviceprep][validateMenid][DBpush]                    
+- Sending query to [ltacc]
+
+SQL [--->
+	SELECT lata from mgmtsubnets WHERE lata = 628
+SQL <---]
+
+[2016/06/08 09:46:41.595][main::deviceprep][validateMenid][DBpush]                    
+- Rows Returned from query as HASHREF, indexed by [lata] ---> [2]
+[2016/06/08 09:46:41.626][main::deviceprep][validateMenid]                            
+- MENID [628] found as valid in LTACC
+[2016/06/08 09:46:41.626][main::deviceprep][getVFIorVRF][DBpush]                      
+- Sending query to [ltacc]
+
+SQL [--->
+	SELECT * from dhcp_relay_l3 WHERE router = 'MPLSMN1370W-CORE-MOE'
+SQL <---]
+
+[2016/06/08 09:46:41.682][main::deviceprep][getVFIorVRF][DBpush]                      
+- Rows Returned from query as HASHREF, indexed by [router] ---> [1]
+
+mgmtnet_subnet                 ----->      65.137.82.0/28
+router                         ----->      MPLSMN1370W-CORE-MOE
+subnet                         ----->      10.137.82.0/28
+vlan                           ----->      127        
+vrf                            ----->      628000000  
+
+[2016/06/08 09:46:41.710][main::deviceprep][getVFIorVRF]                              
+- VRF detected as L3 for [MPLSMN1370W-CORE-MOE] as (628000000)
+
+Checking that our NPE port is available.......
+
+[2016/06/08 09:46:41.711][main::deviceprep][checkPortStatus]                          
+- Checking Port availability for [NPE]
+[2016/06/08 09:46:42.197][main::deviceprep][checkPortStatus][tellUCF]                 
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:42.197][main::deviceprep][checkPortStatus][tellUCF]                 
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "GetPortStatus",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Prompt"        : "",
+                "Error"         : "",
+                "Host"		: "137.107.218.63",
+		"Vendor"	: "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace"	: {
+			"interface"     : "1/1/6",
+                        "prefix"	: "",
+			"virtualShelf"  : "1",
+                        "shelf"		: "",
+                        "slot"		: "1",
+                        "card"		: "1",
+                        "port"		: "6",
+                        "coreName"	: "MPLSMN1370W-CORE-MOE"
+                }
+        }]
+JSON <---]
+
+[2016/06/08 09:46:42.198][main::deviceprep][checkPortStatus][tellUCF]                 
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+
+
+Returned values:
+	ADMIN STATUS:		UP
+	OPERATION STATUS:	DOWN
+
+[2016/06/08 09:46:42.198][main::deviceprep][checkPortStatus]                          
+- Interface [1/1/6] is already in use at 137.107.218.63 but FORCE_OVERRIDE 
+detected
+[2016/06/08 09:46:42.198][main::deviceprep]                                           
+- Port is active, but OVERRIDE FLAG was detected. Proceeding
+[2016/06/08 09:46:42.199][main::deviceprep][hasService]                               
+- Checking for [NPE] service [GET_MODULE_INFORMATION]
+[2016/06/08 09:46:42.199][main::deviceprep][hasService]                               
+- Service not found for [NPE] service [GET_MODULE_INFORMATION]
+[2016/06/08 09:46:42.199][main::deviceprep]                                           
+- Requirement for [GET_MODULE_INFORMATION] is not listed for this device. 
+Skipping
+[2016/06/08 09:46:42.199][main::deviceprep][hasService]                               
+- Checking for [NPE] service [GET_EMS_LOOPBACK_IP]
+[2016/06/08 09:46:42.199][main::deviceprep][hasService]                               
+- Found [NPE] service [GET_EMS_LOOPBACK_IP]
+
+Checking for the existence of a loopbackIP.......
+
+[2016/06/08 09:46:42.199][main::deviceprep][getLoopbackIp]                            
+- Getting Loopback IP information for [NPE]
+[2016/06/08 09:46:42.645][main::deviceprep][getLoopbackIp][tellUCF]                   
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:42.645][main::deviceprep][getLoopbackIp][tellUCF]                   
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "Findip",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                         "coreName": "MPLSMN1370W-CORE-MOE" }
+        }]
+JSON <---]
+
+[2016/06/08 09:46:42.645][main::deviceprep][getLoopbackIp][tellUCF]                   
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:42.645][main::deviceprep][getLoopbackIp]                            
+- NPE system address discovered as [137.107.218.63]
+[2016/06/08 09:46:42.645][main::deviceprep][getLoopbackIp]                            
+- Made EMS portpointer - network:137.107.218.63:shelf-1:cardSlot-
+1:card:daughterCardSlot-1:daughterCard:port-6
+[2016/06/08 09:46:42.646][main::deviceprep]                                           
+- LoopbackIP is set to [137.107.218.63] for EMS connectivity
+
+
+Data received from ISAT and network for device preparation.                       
+[Wed Jun  8 09:46:42 2016]
+-----------------------------------------------------------------------------
+-------------------------------
+1 : Circuit Name         101/GE1/MPLSMN1370W/MPLSMN1393W          2 : 
+Affiliate         QC         
+3 : MENID                628                                      4 : Product           
+CGE        
+
+NPE -------------------------------------------------------------------------
+-------------------------------
+5 : NPE LAG                                                                                        
+6 : NPE Vendor           ALU                                      7 : NPE 
+Model         7210       
+8 : NPE Interface        1/1/6                                    9 : NPE IP            
+137.107.218.63
+10: NPE Type             ALU7210                                  11: NPE 
+Node Name     MPLSMN1370W-CORE-MOE
+12: NPE Prefix                                                                                     
+13: NPE Shelf                                                                                      
+14: NPE Slot             1                                        15: NPE 
+Port TX Rate  1000BASELX 
+16: NPE Card             1                                        17: Service 
+Connector 5620SAM    
+18: NPE Port             6                                        19: 
+LoopbackIP        137.107.218.63
+20: NPE Module                                                    21: NPE 
+Card Type                
+22: NPE Module Serial                                             23: NPE 
+Ports                    
+24: EMS Portpointer      network:137.107.218.63:shelf-1:cardSlot-
+1:card:daughterCardSlot-1:daughterCard:port-6                                  
+
+UPE -------------------------------------------------------------------------
+-------------------------------
+25: UPE LAG                                                                                        
+26: UPE Vendor           Ciena                                    27: UPE 
+Model         3916       
+28: UPE Interface        6                                        29: UPE 
+Node Name     MPLSMN1393W-EDGE-CN1
+30: UPE Type             CIENA3916                                                                 
+31: UPE Prefix                                                                                     
+32: UPE Shelf                                                     33: UPE 
+Port TX Rate  1000BASELX 
+34: UPE Slot                                                      35: AGG 
+Interface                
+36: UPE Card                                                      37: AGG IP                       
+38: UPE Port             6                                        39: Use AGG           
+FALSE      
+40: UPE Location         
+    CenturyLink  500 S. New York Avenue  Winter Park, FL  32789
+
+PARAMETERS ------------------------------------------------------------------
+-------------------------------
+A: DEBUGLOG              [/usr/local/das/logs/deviceprep-DEBUG-101-GE1-
+MPLSMN1370W-MPLSMN1393W.log]
+B: LOG                   [/usr/local/das/logs/deviceprep-101-GE1-MPLSMN1370W-
+MPLSMN1393W.log]
+C: ENVIRONMENT           [application/json]            
+D: INVENTORY             [ARM]                         
+E: SPLUNK                [TRUE]                        
+G: FORCE OVERRIDE        [TRUE]                        
+
+
+
+
+[DAS OBJECT CONTENTS (ALPHABETIC) START]--->
+
+ACTION_NUMBER                  ----->      1952       
+AFFILIATE                      ----->      QC         
+AGG_INTERFACE                  ----->                 
+AGG_IP_ADDRESS                 ----->                 
+CIRCUIT_NAME                   ----->      101/GE1/MPLSMN1370W/MPLSMN1393W
+CORRELATIONID                  ----->      8675309    
+[DASDBHandle]                                         
+DBLOCK                         ----->      OFF        
+DEBUG_LOG                      ----->      /usr/local/das/logs/deviceprep-
+DEBUG-101-GE1-MPLSMN1370W-MPLSMN1393W.log
+ENVIRONMENT                    ----->      application/json
+[ERRORCODES]                                          
+           PORT_IN_USE                     -----> 3111
+           INVALID_NPE_NODENAME            -----> 3115
+           UNINITIALIZED                   -----> 3113
+           MISSING_UPE_RATE                -----> 3135
+           FAILED_PORT_PREP                -----> 3106
+           ADATPREP_VLAN                   -----> 3100
+           INVALID_UPE_DEVICE              -----> 3131
+           DELETION_FAILED                 -----> 3104
+           SAP_DELETION_FAILURE            -----> 3137
+           INVALID_NPE_DEVICE              -----> 3130
+           ISAT_DATA_VALIDATION_ERROR      -----> 3101
+           EMS_EXCEPTION_ERROR             -----> 3140
+           PORT_ALREADY_PREPPED            -----> 3136
+           UNCLASSIFIED_EXCEPTION          -----> 3199
+           EMS_LOOPBACKIP_FAILURE          -----> 3139
+           UCF_CONNECTION_ERROR            -----> 3117
+           DAS_SYNTAX_ERROR                -----> 3124
+           EXISTING_CIRCUIT_ERROR          -----> 3120
+           MISSING_CORE_PORT               -----> 3110
+           SAP_VPLS_CREATION_FAILURE       -----> 3145
+           INVALID_UPE_TRANSMISSION_RATE   -----> 3127
+           L2VFI_ADAT_SUBNET               -----> 3109
+           MISMATCHED_NPE_PREFIX_TO_RATE   -----> 3132
+           INTERFACE_CHECK                 -----> 3107
+           INVALID_CIRCUIT_ID              -----> 3125
+           INVALID_UPE_NODENAME            -----> 3144
+           MISSING_NPE_RATE                -----> 3134
+           MODULE_NOT_SUPPORTED            -----> 3123
+           UCF_INTERACTION_ERROR           -----> 3119
+           INVALID_MODULE                  -----> 3142
+           VPLS_DHCPRELAY_SERVICE          -----> 3116
+           FRAMING_SET_ERROR               -----> 3138
+           INVALID_NPE_TRANSMISSION_RATE   -----> 3126
+           CONFIGURATION_ERROR             -----> 3141
+           INVALID_EDGE_UPLINK             -----> 3108
+           UPLINK_UNSUPPORTED              -----> 3114
+           UPE_INTERFACE_FORMAT_ERROR      -----> 3122
+           REQUIRED_FIELDS_MISSING         -----> 3129
+           UNSUPPORTED_MENID               -----> 3128
+           MISMATCHED_UPE_PREFIX_TO_RATE   -----> 3133
+           EXISTING_SAP                    -----> 3105
+           DEFAULT_PORT                    -----> 3103
+           PORT_READY                      -----> 0   
+           SVC_MGR_ID_FAILURE              -----> 3143
+           DATABASE_TRANSACTION_ERROR      -----> 3118
+           DATABASE_CONNECTION_ERROR       -----> 3102
+           NPE_INTERFACE_FORMAT_ERROR      -----> 3121
+FORCE_OVERRIDE                 ----->      TRUE       
+INVENTORY_SOURCE               ----->      ARM        
+L3VRF                          ----->      628000000  
+LOCAL_LOG                      ----->      /usr/local/das/logs/deviceprep-
+101-GE1-MPLSMN1370W-MPLSMN1393W.log
+[LTACCDBHandle]                                       
+MENID                          ----->      628        
+MODULE_VERSION                 ----->      0.19       
+MSGSRCSYSTEM                   ----->      DASSIM     
+[NPE]                                                 
+           INTERFACE                       -----> 1/1/6
+           CARD                            -----> 1   
+           VENDOR                          -----> ALU 
+           SLOT                            -----> 1   
+           PORT_TRAN_RATE                  -----> 1000BASELX
+           [MODULE_INFO]                              
+           NODE                            -----> MPLSMN1370W-CORE-MOE
+           PORT                            -----> 6   
+           GROUPNUMBER                     ----->     
+           IP_ADDRESS                      -----> 137.107.218.63
+           [UCF_SERVICES]                             
+                                           GET_SAPS_FROM_INTERFACE         --
+---> 1                                           
+                                           GET_EMS_LOOPBACK_IP             --
+---> 1                                           
+                                           VALIDATE_CONFIG_WITH_MTU        --
+---> 1                                           
+                                           SET_FRAMING_TO_DEFAULT          --
+---> 1                                           
+                                           BUILD_PORT_VPLS_SERVICE         --
+---> 1                                           
+                                           GET_INTERFACE_CONFIG            --
+---> 1                                           
+           TYPE                            -----> ALU7210
+           MODEL                           -----> 7210
+           [DEVICE_STANDARDS]                         
+                                           EMSportpointer                  --
+---> network:137.107.218.63:shelf-1:cardSlot-1:card:daughterCardSlot-
+1:daughterCard:port-6
+                                           Model                           --
+---> 7210                                        
+                                           OUT_VPLS_VLAN                   --
+--->                                             
+                                           Vendor                          --
+---> ALU                                         
+                                           sysDescr                        --
+---> TiMOS-B-6.0.R5 both/mpc ALCATEL SAS-M 24F 2XFP 7210 Copyright (c) 2000-
+2014 Alcatel-Lucent.
+All rights reserved. All use subject to applicable license agreements.
+Built on Tue Feb 11 19:28:03 IST 2014 by builder in 
+/home/builder/6.0B1/R5/panos/main
+
+                                           UplinkIntf                      --
+---> ^(1/1/1$|1/1/25$$)                          
+                                           ConnectionMethod                --
+---> 5620SAM                                     
+                                           Hostname                        --
+---> MPLSMN1370W-CORE-MOE                        
+                                           UPE_DEVNAME_REGEX               --
+--->                                             
+                                           NPE_DEVNAME_REGEX               --
+---> ^...........-....-MOE$                      
+                                           ValidActivationUPE              --
+---> False                                       
+                                           InterfaceRegex                  --
+---> ^(\d+)\/(\d+)\/(\d+)?                       
+                                           Timeout                         --
+---> 40                                          
+                                           MAX_PORT_MTU                    --
+---> 9212                                        
+                                           DHCPVLAN                        --
+---> 127                                         
+                                           EnterpriseOID                   --
+---> .1.3.6.1.4.1.6527.6.2.1.2.2.2               
+                                           type                            --
+---> ALU7210                                     
+                                           systemaddress                   --
+---> 137.107.218.63                              
+                                           ValidActivationNPE              --
+---> True                                        
+                                           IN_VPLS_VLAN                    --
+--->                                             
+           SNMPCOMMUNITY                   -----> qM0eRo
+PRODUCT                        ----->      CGE        
+SCHEMAVERSION                  ----->      1.0.0.1    
+SPLUNK_IDENT                   ----->      DAS-PREPARATION
+UCF_ORDERNUMBER                ----->      1272       
+[UPE]                                                 
+           VENDOR                          -----> Ciena
+           PORT_TRAN_RATE                  -----> 1000BASELX
+           INTERFACE                       -----> 6   
+           LOCATION                        -----> CenturyLink  500 S. New 
+York Avenue  Winter Park, FL  32789
+           [DEVICE_STANDARDS]                         
+                                           ValidActivationNPE              --
+---> False                                       
+                                           IN_VPLS_VLAN                    --
+---> 4095                                        
+                                           UPE_DEVNAME_REGEX               --
+---> ^...........-EDGE-CN1$                      
+                                           OUT_VPLS_VLAN                   --
+---> 127                                         
+                                           NPE_DEVNAME_REGEX               --
+--->                                             
+                                           ValidActivationUPE              --
+---> True                                        
+                                           InterfaceRegex                  --
+---> ^(\d+)?                                     
+                                           DHCPVLAN                        --
+---> 127                                         
+                                           type                            --
+---> CIENA3916                                   
+                                           UplinkIntf                      --
+---> 6                                           
+           TYPE                            -----> CIENA3916
+           MODEL                           -----> 3916
+           NODE                            -----> MPLSMN1393W-EDGE-CN1
+           PORT                            -----> 6   
+           GROUPNUMBER                     ----->     
+USE_AGG                        ----->      FALSE      
+USE_SPLUNK                     ----->      TRUE       
+VERSION                        ----->      0.03       
+return_content                 ----->      development
+showUCFcomments                ----->      TRUE       
+
+<---[DAS OBJECT CONTENTS (ALPHABETIC) END]
+
+[2016/06/08 09:46:42.647][main::deviceprep][hasService]                               
+- Checking for [NPE] service [GET_INTERFACE_CONFIG]
+[2016/06/08 09:46:42.647][main::deviceprep][hasService]                               
+- Found [NPE] service [GET_INTERFACE_CONFIG]
+
+Pulling existing NPE interface configuration before modification.......
+
+Getting interface config for [NPE]
+[2016/06/08 09:46:43.396][main::deviceprep][getInterfaceConfig][tellUCF]              
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:43.397][main::deviceprep][getInterfaceConfig][tellUCF]              
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "GetInterfaceConfig",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"		: "137.107.218.63",
+                "Vendor"	: "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "interface"     : "1/1/6",
+                        "prefix"        : "",
+		        "virtualShelf"  : "1",
+                        "shelf"         : "",
+                        "slot"          : "1",
+                        "card"		: "1",
+                        "port"          : "6",
+                        "coreName"      : "MPLSMN1370W-CORE-MOE"}
+        }]
+JSON <---]
+
+[2016/06/08 09:46:43.397][main::deviceprep][getInterfaceConfig][tellUCF]              
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:43.482][main::deviceprep][getInterfaceConfig]                       
+- <----- RECEIVED GOOD RESPONSE FROM UCF
+
+START INTERFACE CONFIG FOR [ALU/7210 PORT (1/1/6) AT [137.107.218.63]--------
+------>
+<?xml version="1.0" encoding="utf-8"?>
+<equipment.PhysicalPort>
+    <ddmEventSuppression>false</ddmEventSuppression>
+    <vplsMode>none</vplsMode>
+    <dwdmChannel>0</dwdmChannel>
+    <otuCapable>false</otuCapable>
+    <otuEnable>disable</otuEnable>
+    <rxdtvAdjust>false</rxdtvAdjust>
+    <ingressAccessWeight>50</ingressAccessWeight>
+    <ingressNetworkWeight>50</ingressNetworkWeight>
+    <egressAccessWeight>50</egressAccessWeight>
+    <egressNetworkWeight>50</egressNetworkWeight>
+    <isEnabled>true</isEnabled>
+    <specificCardType>
+        <bit>mda_7210_m24_1g_m2_10g</bit>
+    </specificCardType>
+    <description>DAS PORTPREP configured as QC/CGE for 
+101/GE1/MPLSMN1370W/MPLSMN1393W;MPLSMN1393W-EDGE-CN1:6 - 1st 
+Uplink</description>
+    <mode>access</mode>
+    <isl2UplinkMode>false</isl2UplinkMode>
+    <macAddress>00-25-BA-03-92-A7</macAddress>
+    <encapType>qinqEncap</encapType>
+    <holdTimeUp>0</holdTimeUp>
+    <holdTimeDown>0</holdTimeDown>
+    <mtuValue>9212</mtuValue>
+    <speed>ethernet1000</speed>
+    <collectStats>false</collectStats>
+    <loadBalanceAlgorithm>notApplicable</loadBalanceAlgorithm>
+    <portSchedulerPolicyObjectPointer />
+    <portEgrHsmdaSchedulerPolicy />
+    <uniProfilePointer />
+    <portIngrNamedPoolPlcy />
+    <portEgrNamedPoolPlcy />
+    <portIngrPoolPercentageRate>100</portIngrPoolPercentageRate>
+    <portEgrPoolPercentageRate>100</portEgrPoolPercentageRate>
+    <vlanAutoBind>true</vlanAutoBind>
+    <portUsage>empty</portUsage>
+    <l2ProfilePointer />
+    <holdTimeUnits>seconds</holdTimeUnits>
+    <displayedName>Port 1/1/6</displayedName>
+    <siteName>MPLSMN1370W-CORE-MOE</siteName>
+    <manufacturer>N/A</manufacturer>
+    <serialNumber>N/A</serialNumber>
+    <administrativeState>portInService</administrativeState>
+    <children-Set>
+        <pae802_1x.PaePortSpecifics>
+            <paePortInitialize>false</paePortInitialize>
+            <paePortReauthenticate>false</paePortReauthenticate>
+            <mprFraming>disabled</mprFraming>
+            <mprLineLength>20</mprLineLength>
+            <children-Set />
+        </pae802_1x.PaePortSpecifics>
+        <lldp.LLDPNearestBridgePortConfiguration>
+            <portCfgAdminStatus>txAndRx</portCfgAdminStatus>
+            <portCfgNotifyEnable>true</portCfgNotifyEnable>
+            <portCfgTLVsTxEnable>
+                <bit>sysCap</bit>
+                <bit>sysDesc</bit>
+                <bit>sysName</bit>
+                <bit>portDesc</bit>
+            </portCfgTLVsTxEnable>
+            <portCfgAddressIndex>1</portCfgAddressIndex>
+            <portCfgManAddrTxEnabled>enabled</portCfgManAddrTxEnabled>
+            <children-Set />
+        </lldp.LLDPNearestBridgePortConfiguration>
+        <pae802_1x.PaePortAuthenticatorSpecifics>
+            
+<paeAuthControlledPortControl>forceAuthorized</paeAuthControlledPortControl>
+            <paeAuthQuietPeriod>60</paeAuthQuietPeriod>
+            <paeAuthTxPeriod>30</paeAuthTxPeriod>
+            <paeAuthSuppTimeout>30</paeAuthSuppTimeout>
+            <paeAuthServerTimeout>30</paeAuthServerTimeout>
+            <paeAuthMaxReq>2</paeAuthMaxReq>
+            <paeAuthReAuthPeriod>3600</paeAuthReAuthPeriod>
+            <paeAuthReAuthEnabled>false</paeAuthReAuthEnabled>
+            <mprFraming>disabled</mprFraming>
+            <mprLineLength>20</mprLineLength>
+            <children-Set />
+        </pae802_1x.PaePortAuthenticatorSpecifics>
+        <ethernetequipment.EthernetPortSpecifics>
+            <duplex>fullDuplex</duplex>
+            <autoNegotiate>true</autoNegotiate>
+            <networkMode>notApplicable</networkMode>
+            <egressRate>-1</egressRate>
+            <egressMaxBurst>-1</egressMaxBurst>
+            <ingressRate>-1</ingressRate>
+            <dot1qEtype>33024</dot1qEtype>
+            <qinqEtype>33024</qinqEtype>
+            <pbbEtype>35047</pbbEtype>
+            <flowControl>notApplicable</flowControl>
+            <operationalFlowControl>notApplicable</operationalFlowControl>
+            <backpressure>notApplicable</backpressure>
+            <broadcastLimit>-1</broadcastLimit>
+            <broadcastLimitInPkt>-1</broadcastLimitInPkt>
+            <remoteFaultDetection>false</remoteFaultDetection>
+            <forwardAllMulticast>false</forwardAllMulticast>
+            <forbidIgmpSnooping>false</forbidIgmpSnooping>
+            <reportAlarmBits />
+            <lacpTunnel>false</lacpTunnel>
+            <interFrameGap>12</interFrameGap>
+            <enableMulticastLimitMode>false</enableMulticastLimitMode>
+            <enablePortMobility>false</enablePortMobility>
+            <defaultVlanRestore>notApplicable</defaultVlanRestore>
+            <defaultVlanEnable>notApplicable</defaultVlanEnable>
+            <mobilePortIgnoreBPDU>notApplicable</mobilePortIgnoreBPDU>
+            <mobilePortAuthenticate>disable</mobilePortAuthenticate>
+            <mobilePortIngFiltering>false</mobilePortIngFiltering>
+            <downWhenLooped>enabled</downWhenLooped>
+            <keepAliveInterval>10</keepAliveInterval>
+            <retryTimeout>30</retryTimeout>
+            <dot1qAcceptableFrameTypes>admitAll</dot1qAcceptableFrameTypes>
+            <useBroadCastAddress>false</useBroadCastAddress>
+            <singleFiber>false</singleFiber>
+            <addressedCapability />
+            <advertisedCapability>hd10</advertisedCapability>
+            <ssm>false</ssm>
+            <txDus>false</txDus>
+            <codeType>sdh</codeType>
+            <portLoopback>none</portLoopback>
+            <portLoopbackTime>0</portLoopbackTime>
+            <uniMode>none</uniMode>
+            <n393>4</n393>
+            <t391>10</t391>
+            <t392>15</t392>
+            <egressSchedulerMode>profile</egressSchedulerMode>
+            <cfmlbMode>disabled</cfmlbMode>
+            <swapMacAddr>false</swapMacAddr>
+            <clockMode>auto</clockMode>
+            <adminPhyTxClock>autoPrefSlave</adminPhyTxClock>
+            <sdThreshold>0</sdThreshold>
+            <sdThresholdMultiplier>1</sdThresholdMultiplier>
+            <sfThreshold>0</sfThreshold>
+            <sfThresholdMultiplier>1</sfThresholdMultiplier>
+            <windowSize>10</windowSize>
+            <downOnInternalError>disabled</downOnInternalError>
+            <enableBroadcastLimitMode>false</enableBroadcastLimitMode>
+            <broadcastLimitType>mbps</broadcastLimitType>
+            <multicastLimit>0</multicastLimit>
+            <multicastLimitType>mbps</multicastLimitType>
+            <enableUUnicastLimitMode>false</enableUUnicastLimitMode>
+            <uUnicastLimitType>mbps</uUnicastLimitType>
+            <uUnicastLimit>0</uUnicastLimit>
+            <ipMTU>0</ipMTU>
+            <mprFraming>disabled</mprFraming>
+            <mprLineLength>20</mprLineLength>
+            <children-Set />
+        </ethernetequipment.EthernetPortSpecifics>
+    </children-Set>
+</equipment.PhysicalPort>
+
+<-----------------END INTERFACE CONFIG FOR [ALU/7210 PORT (1/1/6) AT 
+[137.107.218.63]
+
+
+Setting the interface to factory default.......
+
+[2016/06/08 09:46:43.482][main::deviceprep][defaultNPE]                               
+- Defaulting of [NPE] device requested......
+[2016/06/08 09:46:43.482][main::deviceprep][defaultNPE][hasService]                   
+- Checking for [NPE] service [GET_SAPS_FROM_INTERFACE]
+[2016/06/08 09:46:43.483][main::deviceprep][defaultNPE][hasService]                   
+- Found [NPE] service [GET_SAPS_FROM_INTERFACE]
+[2016/06/08 09:46:43.483][main::deviceprep][defaultNPE][getSaps]                      
+- Starting SAP search routines for [NPE]
+[2016/06/08 09:46:43.483][main::deviceprep][defaultNPE][getSaps]                      
+- Attempting to retrieve all SAP's for NPE at 137.107.218.63 on interface 
+1/1/6 via loopback system address [137.107.218.63]
+[2016/06/08 09:46:43.958][DAS::Prep::defaultNPE][getSaps][tellUCF]                    
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:43.958][DAS::Prep::defaultNPE][getSaps][tellUCF]                    
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "GetSaps",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "systemaddress"	: "137.107.218.63",
+                        "interface"	: "1/1/6" }
+        }]
+JSON <---]
+
+[2016/06/08 09:46:43.958][DAS::Prep::defaultNPE][getSaps][tellUCF]                    
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+
+SAP found at 1/1/6:127.*       as vpls     added to SAP object attribute.
+
+[2016/06/08 09:46:43.959][main::deviceprep][defaultNPE][getSaps]                      
+- Total of 1 SAP's have been found for deletion on port 1/1/6
+[2016/06/08 09:46:43.959][main::deviceprep][defaultNPE][deleteSaps]                   
+- Searching for SAP's to delete for [NPE] on interface 
+
+Deleting VPLS    service 591 on 1/1/6:127.* 127 4095
+[2016/06/08 09:46:44.838][DAS::Prep::defaultNPE][deleteSaps][tellUCF]                 
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:44.839][DAS::Prep::defaultNPE][deleteSaps][tellUCF]                 
+- Payload is:
+
+JSON [--->
+	[{
+                        "RequestType"   : "DeleteVPLSsap",
+                        "OrderNumber"   : "1272",
+                        "Service"       : "5620SAM",
+                        "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                        "Timeout"       : "40",
+                        "Host"          : "137.107.218.63",
+                        "Vendor"        : "ALU",
+                        "Affiliate"     : "QC",
+                        "KeywordsToReplace": {
+                                "nodeIp"            : "137.107.218.63",
+                                "svcComponentId"    : "591",
+                                "portPointer"       : 
+"network:137.107.218.63:shelf-1:cardSlot-1:card:daughterCardSlot-
+1:daughterCard:port-6",
+                                "outerEncapValue"   : "127",
+                                "innerEncapValue"   : "4095" }
+                        }]
+JSON <---]
+
+[2016/06/08 09:46:44.839][DAS::Prep::defaultNPE][deleteSaps][tellUCF]                 
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+
+[2016/06/08 09:46:44.839][DAS::Prep::defaultNPE][deleteSaps][getSaps]                 
+- Starting SAP search routines for [NPE]
+[2016/06/08 09:46:44.839][DAS::Prep::defaultNPE][deleteSaps][getSaps]                 
+- Attempting to retrieve all SAP's for NPE at 137.107.218.63 on interface 
+1/1/6 via loopback system address [137.107.218.63]
+[2016/06/08 09:46:45.320][DAS::Prep::deleteSaps][getSaps][tellUCF]                    
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:45.320][DAS::Prep::deleteSaps][getSaps][tellUCF]                    
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "GetSaps",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "systemaddress"	: "137.107.218.63",
+                        "interface"	: "1/1/6" }
+        }]
+JSON <---]
+
+[2016/06/08 09:46:45.320][DAS::Prep::deleteSaps][getSaps][tellUCF]                    
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+
+
+[2016/06/08 09:46:45.321][DAS::Prep::defaultNPE][deleteSaps][getSaps]                 
+- Total of 0 SAP's have been found for deletion on port 1/1/6
+[2016/06/08 09:46:45.321][main::deviceprep][defaultNPE][deleteSaps]                   
+- All SAP's for [NPE] device have been deleted.
+[2016/06/08 09:46:46.104][main::deviceprep][defaultNPE][tellUCF]                      
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:46.104][main::deviceprep][defaultNPE][tellUCF]                      
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "DefaultInterface",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"		: "137.107.218.63",
+                "Vendor"	: "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+			"UPEPortRate"   : "1000BASE",
+                        "interface"     : "1/1/6",
+                        "prefix"        : "",
+                        "shelf"   	: "",
+                        "slot"		: "1",
+                        "card"          : "1",
+                        "port"          : "6",
+                        "coreName"      : "MPLSMN1370W-CORE-MOE",
+			"loopbackIp"    : "137.107.218.63",
+			"portPointer"   : "network:137.107.218.63:shelf-1:cardSlot-
+1:card:daughterCardSlot-1:daughterCard:port-6"
+		}
+        }]
+JSON <---]
+
+[2016/06/08 09:46:46.104][main::deviceprep][defaultNPE][tellUCF]                      
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:46.105][main::deviceprep][defaultNPE]                               
+- <----- RECEIVED GOOD RESPONSE FROM UCF
+[2016/06/08 09:46:46.105][main::deviceprep][defaultNPE]                               
+- 1/1/6 AT [137.107.218.63] factory defaulted.
+[2016/06/08 09:46:46.105][main::deviceprep][defaultNPE][hasService]                   
+- Checking for [NPE] service [SET_FRAMING_TO_DEFAULT]
+[2016/06/08 09:46:46.106][main::deviceprep][defaultNPE][hasService]                   
+- Found [NPE] service [SET_FRAMING_TO_DEFAULT]
+[2016/06/08 09:46:46.106][main::deviceprep][defaultNPE][setEthernetFraming]           
+- Getting Default Framing from UCF
+[2016/06/08 09:46:46.355][DAS::Prep::defaultNPE][setEthernetFraming][tellUCF]         
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:46.355][DAS::Prep::defaultNPE][setEthernetFraming][tellUCF]         
+- Payload is:
+
+JSON [--->
+	[{
+        	          "Service"     : "getConversionTableEntry",
+                	  "OrderNumber" : "1272",
+               		  "Table"       : "Framing",
+                  	  "Entry"       : "DefaultDHCP"
+        	}]
+JSON <---]
+
+[2016/06/08 09:46:46.355][DAS::Prep::defaultNPE][setEthernetFraming][tellUCF]         
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:46.356][main::deviceprep][defaultNPE][setEthernetFraming]           
+- Setting ethernet framing for [NPE] as decimal [33024]
+[2016/06/08 09:46:46.817][DAS::Prep::defaultNPE][setEthernetFraming][tellUCF]         
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:46.817][DAS::Prep::defaultNPE][setEthernetFraming][tellUCF]         
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "SetEthernetFraming",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "prefix"          : "",
+                        "shelf"           : "",
+                        "slot" 		  : "1",
+                        "card"            : "1",
+                        "port"            : "6",
+                        "coreName"        : "MPLSMN1370W-CORE-MOE",
+                        "loopbackIp"      : "137.107.218.63",
+			"portPointer"     : "network:137.107.218.63:shelf-
+1:cardSlot-1:card:daughterCardSlot-1:daughterCard:port-6",
+			"framingDecimal"  : "33024"
+                }
+        }]
+JSON <---]
+
+[2016/06/08 09:46:46.817][DAS::Prep::defaultNPE][setEthernetFraming][tellUCF]         
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:46.817][main::deviceprep][defaultNPE][setEthernetFraming]           
+- Ethernet framing for [NPE] set to 33024
+
+Pushing PORTPREP config to the device, attempt [1] of [5]
+
+[2016/06/08 09:46:46.818][main::deviceprep][pushConfig]                               
+- Pushing configuration supporting UPE Ciena 3916 to NPE ALU 7210 [1/1/6] for 
+[] at 137.107.218.63
+[2016/06/08 09:46:53.682][main::deviceprep][pushConfig][tellUCF]                      
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:53.683][main::deviceprep][pushConfig][tellUCF]                      
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "ConfigureInterface",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"		: "137.107.218.63",
+                "Vendor"	: "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace"	: {
+                        "UPEPortRate"           : "1000BASE",
+                        "Interface"		: "1/1/6",
+                        "Description"		: "DAS PORTPREP configured as 
+QC/CGE for 101/GE1/MPLSMN1370W/MPLSMN1393W;MPLSMN1393W-EDGE-CN1:6 - 1st 
+Uplink",
+			"MAX_PORT_MTU" 		: "9212",
+			"PSW_SERVICE_MTU"       : "",
+			"L2VPN_SERVICE_MTU"     : "",
+			"ADAT_DHCP_VLAN"        : "",
+			"DHCPVLAN" 		: "127",
+			"UPE_DHCP_VLAN"         : "127",
+                        "TFTP_HOST"             : "",
+                        "prefix"  	        : "",
+                        "shelf"      	        : "",
+                        "slot"                  : "1",
+                        "card"                  : "1",
+                        "port"                  : "6",
+                        "coreName"              : "MPLSMN1370W-CORE-MOE",
+                        "loopbackIp"            : "137.107.218.63",
+			"portPointer"           : "network:137.107.218.63:shelf-
+1:cardSlot-1:card:daughterCardSlot-1:daughterCard:port-6"
+                },
+                "Scope"			: {
+                          "SWVersion" 	: "1.1",
+	                  "Affiliate"   : "QC",
+			  "Product" 	: "CGE",
+			  "UPEType" 	: "ALL",
+			  "UPEVendor" 	: "Ciena",
+			  "NPEModule" 	: "",
+			  "UseAgg"      : "FALSE"}
+         }]
+JSON <---]
+
+[2016/06/08 09:46:53.683][main::deviceprep][pushConfig][tellUCF]                      
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:53.683][main::deviceprep][pushConfig]                               
+- <----- RECEIVED GOOD RESPONSE FROM UCF
+[2016/06/08 09:46:53.683][main::deviceprep][pushConfig]                               
+- Circuit 101/GE1/MPLSMN1370W/MPLSMN1393W AT [137.107.218.63] has been 
+prepped
+[2016/06/08 09:46:53.684][main::deviceprep][hasService]                               
+- Checking for [NPE] service [VALIDATE_CONFIG_WITH_MTU]
+[2016/06/08 09:46:53.684][main::deviceprep][hasService]                               
+- Found [NPE] service [VALIDATE_CONFIG_WITH_MTU]
+[2016/06/08 09:46:53.684][main::deviceprep][getMTU]                                   
+- Getting MTU...
+[2016/06/08 09:46:54.167][main::deviceprep][getMTU][tellUCF]                          
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:54.167][main::deviceprep][getMTU][tellUCF]                          
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "getPortMTU",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "coreName"        : "MPLSMN1370W-CORE-MOE",
+                        "prefix"          : "",
+			"virtualShelf"    : "1",
+                        "shelfId"         : "",
+                        "slot"            : "1",
+                        "card"            : "1",
+                        "port"            : "6",
+                        "loopbackIp"      : "137.107.218.63"}
+        }]
+JSON <---]
+
+[2016/06/08 09:46:54.167][main::deviceprep][getMTU][tellUCF]                          
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:54.167][main::deviceprep][getMTU]                                   
+- MTU is 9212
+
+MTU [9212] matches MAX_PORT_MTU, configuration successful
+
+[2016/06/08 09:46:54.168][main::deviceprep][hasService]                               
+- Checking for [NPE] service [GET_INTERFACE_CONFIG]
+[2016/06/08 09:46:54.168][main::deviceprep][hasService]                               
+- Found [NPE] service [GET_INTERFACE_CONFIG]
+
+Pulling existing NPE interface configuration after modification.......
+
+Getting interface config for [NPE]
+[2016/06/08 09:46:54.708][main::deviceprep][getInterfaceConfig][tellUCF]              
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:54.708][main::deviceprep][getInterfaceConfig][tellUCF]              
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "GetInterfaceConfig",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"		: "137.107.218.63",
+                "Vendor"	: "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "interface"     : "1/1/6",
+                        "prefix"        : "",
+		        "virtualShelf"  : "1",
+                        "shelf"         : "",
+                        "slot"          : "1",
+                        "card"		: "1",
+                        "port"          : "6",
+                        "coreName"      : "MPLSMN1370W-CORE-MOE"}
+        }]
+JSON <---]
+
+[2016/06/08 09:46:54.708][main::deviceprep][getInterfaceConfig][tellUCF]              
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:54.790][main::deviceprep][getInterfaceConfig]                       
+- <----- RECEIVED GOOD RESPONSE FROM UCF
+
+START INTERFACE CONFIG FOR [ALU/7210 PORT (1/1/6) AT [137.107.218.63]--------
+------>
+<?xml version="1.0" encoding="utf-8"?>
+<equipment.PhysicalPort>
+    <ddmEventSuppression>false</ddmEventSuppression>
+    <vplsMode>none</vplsMode>
+    <dwdmChannel>0</dwdmChannel>
+    <otuCapable>false</otuCapable>
+    <otuEnable>disable</otuEnable>
+    <rxdtvAdjust>false</rxdtvAdjust>
+    <ingressAccessWeight>50</ingressAccessWeight>
+    <ingressNetworkWeight>50</ingressNetworkWeight>
+    <egressAccessWeight>50</egressAccessWeight>
+    <egressNetworkWeight>50</egressNetworkWeight>
+    <isEnabled>true</isEnabled>
+    <specificCardType>
+        <bit>mda_7210_m24_1g_m2_10g</bit>
+    </specificCardType>
+    <description>DAS PORTPREP configured as QC/CGE for 
+101/GE1/MPLSMN1370W/MPLSMN1393W;MPLSMN1393W-EDGE-CN1:6 - 1st 
+Uplink</description>
+    <mode>access</mode>
+    <isl2UplinkMode>false</isl2UplinkMode>
+    <macAddress>00-25-BA-03-92-A7</macAddress>
+    <encapType>qinqEncap</encapType>
+    <holdTimeUp>0</holdTimeUp>
+    <holdTimeDown>0</holdTimeDown>
+    <mtuValue>9212</mtuValue>
+    <speed>ethernet1000</speed>
+    <collectStats>false</collectStats>
+    <loadBalanceAlgorithm>notApplicable</loadBalanceAlgorithm>
+    <portSchedulerPolicyObjectPointer />
+    <portEgrHsmdaSchedulerPolicy />
+    <uniProfilePointer />
+    <portIngrNamedPoolPlcy />
+    <portEgrNamedPoolPlcy />
+    <portIngrPoolPercentageRate>100</portIngrPoolPercentageRate>
+    <portEgrPoolPercentageRate>100</portEgrPoolPercentageRate>
+    <vlanAutoBind>true</vlanAutoBind>
+    <portUsage>empty</portUsage>
+    <l2ProfilePointer />
+    <holdTimeUnits>seconds</holdTimeUnits>
+    <displayedName>Port 1/1/6</displayedName>
+    <siteName>MPLSMN1370W-CORE-MOE</siteName>
+    <manufacturer>N/A</manufacturer>
+    <serialNumber>N/A</serialNumber>
+    <administrativeState>portInService</administrativeState>
+    <children-Set>
+        <pae802_1x.PaePortSpecifics>
+            <paePortInitialize>false</paePortInitialize>
+            <paePortReauthenticate>false</paePortReauthenticate>
+            <mprFraming>disabled</mprFraming>
+            <mprLineLength>20</mprLineLength>
+            <children-Set />
+        </pae802_1x.PaePortSpecifics>
+        <lldp.LLDPNearestBridgePortConfiguration>
+            <portCfgAdminStatus>txAndRx</portCfgAdminStatus>
+            <portCfgNotifyEnable>true</portCfgNotifyEnable>
+            <portCfgTLVsTxEnable>
+                <bit>sysCap</bit>
+                <bit>sysDesc</bit>
+                <bit>sysName</bit>
+                <bit>portDesc</bit>
+            </portCfgTLVsTxEnable>
+            <portCfgAddressIndex>1</portCfgAddressIndex>
+            <portCfgManAddrTxEnabled>enabled</portCfgManAddrTxEnabled>
+            <children-Set />
+        </lldp.LLDPNearestBridgePortConfiguration>
+        <pae802_1x.PaePortAuthenticatorSpecifics>
+            
+<paeAuthControlledPortControl>forceAuthorized</paeAuthControlledPortControl>
+            <paeAuthQuietPeriod>60</paeAuthQuietPeriod>
+            <paeAuthTxPeriod>30</paeAuthTxPeriod>
+            <paeAuthSuppTimeout>30</paeAuthSuppTimeout>
+            <paeAuthServerTimeout>30</paeAuthServerTimeout>
+            <paeAuthMaxReq>2</paeAuthMaxReq>
+            <paeAuthReAuthPeriod>3600</paeAuthReAuthPeriod>
+            <paeAuthReAuthEnabled>false</paeAuthReAuthEnabled>
+            <mprFraming>disabled</mprFraming>
+            <mprLineLength>20</mprLineLength>
+            <children-Set />
+        </pae802_1x.PaePortAuthenticatorSpecifics>
+        <ethernetequipment.EthernetPortSpecifics>
+            <duplex>fullDuplex</duplex>
+            <autoNegotiate>true</autoNegotiate>
+            <networkMode>notApplicable</networkMode>
+            <egressRate>-1</egressRate>
+            <egressMaxBurst>-1</egressMaxBurst>
+            <ingressRate>-1</ingressRate>
+            <dot1qEtype>33024</dot1qEtype>
+            <qinqEtype>33024</qinqEtype>
+            <pbbEtype>35047</pbbEtype>
+            <flowControl>notApplicable</flowControl>
+            <operationalFlowControl>notApplicable</operationalFlowControl>
+            <backpressure>notApplicable</backpressure>
+            <broadcastLimit>-1</broadcastLimit>
+            <broadcastLimitInPkt>-1</broadcastLimitInPkt>
+            <remoteFaultDetection>false</remoteFaultDetection>
+            <forwardAllMulticast>false</forwardAllMulticast>
+            <forbidIgmpSnooping>false</forbidIgmpSnooping>
+            <reportAlarmBits />
+            <lacpTunnel>false</lacpTunnel>
+            <interFrameGap>12</interFrameGap>
+            <enableMulticastLimitMode>false</enableMulticastLimitMode>
+            <enablePortMobility>false</enablePortMobility>
+            <defaultVlanRestore>notApplicable</defaultVlanRestore>
+            <defaultVlanEnable>notApplicable</defaultVlanEnable>
+            <mobilePortIgnoreBPDU>notApplicable</mobilePortIgnoreBPDU>
+            <mobilePortAuthenticate>disable</mobilePortAuthenticate>
+            <mobilePortIngFiltering>false</mobilePortIngFiltering>
+            <downWhenLooped>enabled</downWhenLooped>
+            <keepAliveInterval>10</keepAliveInterval>
+            <retryTimeout>30</retryTimeout>
+            <dot1qAcceptableFrameTypes>admitAll</dot1qAcceptableFrameTypes>
+            <useBroadCastAddress>false</useBroadCastAddress>
+            <singleFiber>false</singleFiber>
+            <addressedCapability />
+            <advertisedCapability>hd10</advertisedCapability>
+            <ssm>false</ssm>
+            <txDus>false</txDus>
+            <codeType>sdh</codeType>
+            <portLoopback>none</portLoopback>
+            <portLoopbackTime>0</portLoopbackTime>
+            <uniMode>none</uniMode>
+            <n393>4</n393>
+            <t391>10</t391>
+            <t392>15</t392>
+            <egressSchedulerMode>profile</egressSchedulerMode>
+            <cfmlbMode>disabled</cfmlbMode>
+            <swapMacAddr>false</swapMacAddr>
+            <clockMode>auto</clockMode>
+            <adminPhyTxClock>autoPrefSlave</adminPhyTxClock>
+            <sdThreshold>0</sdThreshold>
+            <sdThresholdMultiplier>1</sdThresholdMultiplier>
+            <sfThreshold>0</sfThreshold>
+            <sfThresholdMultiplier>1</sfThresholdMultiplier>
+            <windowSize>10</windowSize>
+            <downOnInternalError>disabled</downOnInternalError>
+            <enableBroadcastLimitMode>false</enableBroadcastLimitMode>
+            <broadcastLimitType>mbps</broadcastLimitType>
+            <multicastLimit>0</multicastLimit>
+            <multicastLimitType>mbps</multicastLimitType>
+            <enableUUnicastLimitMode>false</enableUUnicastLimitMode>
+            <uUnicastLimitType>mbps</uUnicastLimitType>
+            <uUnicastLimit>0</uUnicastLimit>
+            <ipMTU>0</ipMTU>
+            <mprFraming>disabled</mprFraming>
+            <mprLineLength>20</mprLineLength>
+            <children-Set />
+        </ethernetequipment.EthernetPortSpecifics>
+    </children-Set>
+</equipment.PhysicalPort>
+
+<-----------------END INTERFACE CONFIG FOR [ALU/7210 PORT (1/1/6) AT 
+[137.107.218.63]
+
+
+Conducting POST configuration Activities
+
+[2016/06/08 09:46:54.791][main::deviceprep][hasService]                               
+- Checking for [NPE] service [BUILD_PORT_VPLS_SERVICE]
+[2016/06/08 09:46:54.791][main::deviceprep][hasService]                               
+- Found [NPE] service [BUILD_PORT_VPLS_SERVICE]
+[2016/06/08 09:46:54.791][main::deviceprep][buildVPLSservice]                         
+- Retrieving Service manager id for [628000001]
+[2016/06/08 
+09:46:54.791][main::deviceprep][buildVPLSservice][getServiceManagerId]    - 
+Getting NPE service manager ID
+[2016/06/08 
+09:46:55.247][DAS::Prep::buildVPLSservice][getServiceManagerId][tellUCF]  - 
+Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 
+09:46:55.247][DAS::Prep::buildVPLSservice][getServiceManagerId][tellUCF]  - 
+Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "getServiceManagerId",
+                "OrderNumber"   : "1272",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "systemaddress" : "137.107.218.63",
+                        "serviceId"     : "628000001" }
+        }]
+JSON <---]
+
+[2016/06/08 
+09:46:55.247][DAS::Prep::buildVPLSservice][getServiceManagerId][tellUCF]  - 
+UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:55.248][main::deviceprep][buildVPLSservice]                         
+- Service manager id for 628000001 is [svc-mgr:service-591]
+[2016/06/08 09:46:55.248][main::deviceprep][buildVPLSservice]                         
+- Assigning NPE SAP name as 1/1/6:127.*
+[2016/06/08 09:46:55.248][main::deviceprep][buildVPLSservice]                         
+- Retrieving SAPs for Service [628000001]
+[2016/06/08 
+09:46:55.248][main::deviceprep][buildVPLSservice][getSapWithinService]    - 
+Getting SAP's within service for ID [628000001] for 1/1/6:127.*
+[2016/06/08 
+09:46:55.704][DAS::Prep::buildVPLSservice][getSapWithinService][tellUCF]  - 
+Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 
+09:46:55.704][DAS::Prep::buildVPLSservice][getSapWithinService][tellUCF]  - 
+Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "FindSapWithinService",
+                "OrderNumber"   : "1272",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "systemaddress" : "137.107.218.63",
+                        "serviceId"     : "628000001" }
+        }]
+JSON <---]
+
+[2016/06/08 
+09:46:55.704][DAS::Prep::buildVPLSservice][getSapWithinService][tellUCF]  - 
+UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+
+
+[2016/06/08 
+09:46:55.705][main::deviceprep][buildVPLSservice][getSapWithinService]    - 
+Total of 13 SAP's have been found for ID [628000001], [0] for services on 
+port [1/1/6:127.*]
+[2016/06/08 09:46:55.705][main::deviceprep][buildVPLSservice]                         
+- Building service for [628000001]
+[2016/06/08 09:46:55.705][main::deviceprep][buildVPLSservice][addSaptoVpls]           
+- Creating service addition for [vplsServiceId]
+[2016/06/08 09:46:58.175][DAS::Prep::buildVPLSservice][addSaptoVpls][tellUCF]         
+- Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 09:46:58.175][DAS::Prep::buildVPLSservice][addSaptoVpls][tellUCF]         
+- Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "AddSaptoVpls",
+                "OrderNumber"   : "1272",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "prefix"        : "",
+                        "shelf"         : "",
+                        "slot"          : "1",
+                        "card"          : "1",
+                        "port"          : "6",
+                        "iVlan"         : "4095",
+                        "oVlan"         : "127",
+                        "svcMgrId"      : "svc-mgr:service-591",
+                        "loopbackIp"    : "137.107.218.63",
+			"portPointer"   : "network:137.107.218.63:shelf-1:cardSlot-
+1:card:daughterCardSlot-1:daughterCard:port-6"
+		}
+        }]
+JSON <---]
+
+[2016/06/08 09:46:58.175][DAS::Prep::buildVPLSservice][addSaptoVpls][tellUCF]         
+- UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+[2016/06/08 09:46:58.175][main::deviceprep][buildVPLSservice]                         
+- Service for [628000001] completed...
+[2016/06/08 
+09:46:58.176][main::deviceprep][buildVPLSservice][getSapWithinService]    - 
+Getting SAP's within service for ID [628000001] for 1/1/6:127.*
+[2016/06/08 
+09:46:58.630][DAS::Prep::buildVPLSservice][getSapWithinService][tellUCF]  - 
+Polling UCF at [http://ucf.corp.intranet/api/v1/ucf/]
+[2016/06/08 
+09:46:58.631][DAS::Prep::buildVPLSservice][getSapWithinService][tellUCF]  - 
+Payload is:
+
+JSON [--->
+	[{
+                "RequestType"   : "FindSapWithinService",
+                "OrderNumber"   : "1272",
+                "Error"         : "",
+                "Prompt"        : "",
+                "Service"       : "5620SAM",
+                "Model"         : ".1.3.6.1.4.1.6527.6.2.1.2.2.2",
+                "Timeout"       : "40",
+                "Host"          : "137.107.218.63",
+                "Vendor"        : "ALU",
+                "Affiliate"     : "QC",
+                "KeywordsToReplace": {
+                        "systemaddress" : "137.107.218.63",
+                        "serviceId"     : "628000001" }
+        }]
+JSON <---]
+
+[2016/06/08 
+09:46:58.631][DAS::Prep::buildVPLSservice][getSapWithinService][tellUCF]  - 
+UCF interaction successful. Passing data to caller.
+
+No UCF Comment found for this service
+
+
+SAP found at 1/1/6:127.*       on ID [628000001].            
+
+[2016/06/08 
+09:46:58.631][main::deviceprep][buildVPLSservice][getSapWithinService]    - 
+Total of 14 SAP's have been found for ID [628000001], [1] for services on 
+port [1/1/6:127.*]
+[2016/06/08 09:46:58.632][main::deviceprep][buildVPLSservice]                         
+- SAP VPLS service was successfully created
+[2016/06/08 09:46:58.632][main::deviceprep][setStatus]                                
+- Status has been changed to ---> [PORT_READY]
+[2016/06/08 09:46:58.632][main::deviceprep][endSession]                               
+- Ending deviceprep Session for Circuit ID [101/GE1/MPLSMN1370W/MPLSMN1393W]
+[2016/06/08 09:46:58.632][main::deviceprep][endSession]                               
+- Closing deviceprep Object.
+[2016/06/08 09:46:58.633][main::deviceprep][endSession][finalizeDB]                   
+- Finalizing DA Database from this event
+[2016/06/08 09:46:58.633][DAS::Dastools::endSession][finalizeDB][DBpush]              
+- Sending query to [das]
+
+SQL [--->
+	
+			UPDATE device_activation SET NPE_PORT_STATUS='PORT_READY', 
+ACTIVATION_STATUS='WAITING ON DHCP REQUEST', PRODUCT="CGE", AFFILIATE="QC",
+                NPE_TYPE="ALU7210", NPE_VENDOR="ALU", NPE_RATE="1000BASELX", 
+NPE_MODEL="7210", UPE_TYPE="CIENA3916",
+		UPE_VENDOR="Ciena", UPE_RATE="1000BASELX", UPE_MODEL="3916", 
+INVENTORY="ARM", LAST_MESSAGE="",  
+		LAST_MODIFIED="2016/06/08 09:46:58.633", NPE_INTERFACE="1/1/6", 
+UPE_INTERFACE="6", UPE_LOCATION="CenturyLink  500 S. New York Avenue  Winter 
+Park, FL  32789",
+		NPE_MODULE=""
+                WHERE CIRCUIT_ID = "101/GE1/MPLSMN1370W/MPLSMN1393W"
+	 
+SQL <---]
+
+[2016/06/08 09:46:58.637][DAS::Dastools::endSession][finalizeDB][DBpush]              
+- Rows Returned from query as ARRAYREF ---> [1]
+[2016/06/08 09:46:58.638][main::deviceprep][endSession][finalizeDB]                   
+- DA Database has been finalized
+[2016/06/08 09:46:58.638][main::deviceprep][endSession]                               
+- Closing Connection to DAS Device Activation Database.
+[2016/06/08 09:46:58.638][main::deviceprep][endSession]                               
+- Closing Connection to MARS LTACC Database.
+[2016/06/08 09:46:58.639][main::deviceprep][endSession]                               
+- Closing DAS Splunk syslog connector
+[2016/06/08 09:46:58.639][main::deviceprep][endSession][splunkConnector]              
+- Closing syslog connection for splunk.....
+[2016/06/08 09:46:58.639][main::deviceprep][endSession]                               
+- Closing Log [/usr/local/das/logs/deviceprep-101-GE1-MPLSMN1370W-
+MPLSMN1393W.log]
+[2016/06/08 09:46:58.640][main::deviceprep][endSession]                               
+- Closing Log [/usr/local/das/logs/deviceprep-DEBUG-101-GE1-MPLSMN1370W-
+MPLSMN1393W.log]
+
+SENDING THE FOLLOWING BACK TO ISAT....
+
+XML MESSAGE START----------->
+
+<NetworkResponse  xmlns="http://www.centurylink.com/XMLSchema/mars">
+<ResponseStatus>success</ResponseStatus>
+        <ResponseMessage>
+                <Code>0</Code>
+                <Message>PORT_READY - </Message>
+        </ResponseMessage>
+</NetworkResponse>
+        
+<------------ END XML MESSAGE
+
+
